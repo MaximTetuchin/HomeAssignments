@@ -1,3 +1,4 @@
-cmake_minimum_required(VERSION 3.10.0)
-project(Testing)
-add_executable(${PROJECT_NAME} Hello_world.cpp)x
+cmake_minimum_required(VERSION 3.10)
+project(Hello_world)
+include_directories(${PROJECT_SOURCE_DIR})
+add_executable(Hello_world main.cpp function.cpp)

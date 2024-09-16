@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Hello_world.dir/main.cpp.o CMakeFiles/Hello_world.dir/function.cpp.o -o Hello_world 
