@@ -3,13 +3,7 @@ Hello_world project
 */
 #include "function_header.hpp"
 #include <iostream>
-using namespace std;
-
-void hello_world_output(){
-    string word;
-    while (true) {
-        cout<<"Введите текст:";
-        cin>>word;
-        cout << "Hello, " << word << endl;
-    }
+#include <string>
+void hello_world_output(std::string word){
+    std::cout << "Hello, " << word << "\n";
 }

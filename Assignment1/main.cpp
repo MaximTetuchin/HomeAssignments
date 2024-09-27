@@ -6,6 +6,12 @@ Hello_world project
 using namespace std;
 
 int main(){
-    hello_world_output();
+    while (true)
+    {
+        std::string word;
+        std::cout<<"Введите текст: ";
+        std::cin>>word;
+        hello_world_output(word);
+    }
     return 0;
 }
