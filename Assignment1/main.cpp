@@ -11,8 +11,8 @@ int main(){
     while (true)
     {
         std::string word;
-        std::cout<<"Введите текст: ";
-        std::cin>>word;
+        std::cout << "Введите текст: ";
+        std::cin>> word ;
         if (word=="-"){
             break;
         }
