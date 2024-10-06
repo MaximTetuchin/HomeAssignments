@@ -1,12 +1,11 @@
-#include <iostream>
-#include <filesystem>
-#include <fstream>
-#include <string>
+#include "functions_declaration.hpp"
 
 int main(){
-    std::ifstream input_file; // Объявляем входной файл
-    std::string filePath = "bin_example.jpg"; // Вводим путь используемого файла
-    input_file.open(filePath,std::ios::binary|std::ios::in); //? Определяем файл (?)
-    int fileSize = std::filesystem::file_size(filePath); // Узнаем размер файла
-    char* fileArray = new char[fileSize]; // Выделяем массив длинной в размер файл
+    {
+        std::string filePath;
+        std::cout<<"Сейчас Вы можете указать относительный путь файла для проверки\n";
+        std::cout<<"Если же Вы введете в консоль '-',то будет отреверсирован файл putTextHere.txt\n";
+        std::cin >> filePath;
+        TextReverse(filePath);
+    }
 }
