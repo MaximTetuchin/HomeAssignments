@@ -8,4 +8,13 @@ int main(){
         std::cin >> filePath;
         TextReverse(filePath);
     }
+    std::cout<<"\n";
+    {
+        std::cin.ignore();
+        std::cout<<"А теперь перейдем к обратной польской записи числа\n";
+        std::cout<<"Введи выражение,которое хочешь вычислить:\n";
+        std::string input;
+        std::getline(std::cin,input);
+        ReversePolishEntry(input);
+    }
 }
