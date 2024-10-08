@@ -8,7 +8,3 @@
 void TextReverse(std::string filePath);
 #endif
 
-#ifndef Assignment2_reversePolishEntry
-#define Assignment2_reversePolishEntry
-void ReversePolishEntry(std::string userInput);
-#endif
