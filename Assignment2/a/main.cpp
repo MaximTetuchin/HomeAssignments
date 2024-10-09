@@ -1,3 +1,7 @@
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 2a
+*/
+
 #include "functions_declaration.hpp"
 
 int main(){
