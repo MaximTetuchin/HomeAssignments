@@ -10,4 +10,4 @@ But user can also enter different path.
 ## Build
 make
 ## Run
-./Assignment1
+./Assignment2a
