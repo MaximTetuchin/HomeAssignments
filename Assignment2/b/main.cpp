@@ -1,3 +1,7 @@
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 2b
+*/
+
 /* Код */
 #include <iostream>
 #include <string>
