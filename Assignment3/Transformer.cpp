@@ -1,33 +1,40 @@
-#include <iostream>
-#include <string>
-class Transformer{
-    //! Объявляем методы
-    public:
-        void pullOutTheGun();
-        void Transform();
-        void ShowInfo(){
-            std::cout<<_callSign<<" "<<_moveSpeed<<" "<<_HP<<" "<<_isGunEquiped<<"\n";
-        };
+#include "Transformer.h"
+#include "PowerCore.h"
 
-    //! Объявляем Поля
-    private:
-        std::string _callSign;
-        int _moveSpeed;
-        int _HP;
-        bool _isGunEquiped;
-     
-    //! Объявим конструктор
-    public:
-        Transformer(std::string callSign,int moveSpeed,int HP,bool isGunEquiped):
-        _callSign(callSign), _moveSpeed(moveSpeed),_HP(HP),_isGunEquiped(isGunEquiped){}
-};
+//! Конструктор и деструктор (реализация)
+Transformer::Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed,PowerCore coreStatus):
+    _callSign(callSign), 
+    _moveSpeed(moveSpeed), 
+    _isGunEquiped(isGunEquiped), 
+    _isTransformed(isTransformed), 
+    _powerCore(coreStatus){}
+Transformer::~Transformer(){};
+
+//! Методы (реализация)
+void Transformer::pullOutTheGun() {
+    if (_isGunEquiped == 0) {
+        _isGunEquiped = 1;
+    }
+}
+
+void Transformer::Transform() {
+    if (_isTransformed == 0) {
+        _isTransformed = 1;
+    } else {
+        _isTransformed = 0;
+    }
+}
 
 int main(){
-    std::string callSign = "Dakara ima ichibyou goto ni";
-    int moveSpeed = 40;
-    int HP = 100;
-    bool isGunEquiped = 0;
-
-    Transformer Optimus(callSign,moveSpeed,HP,isGunEquiped);
-    Optimus.ShowInfo();
+    std::string callSign = "Optimus Prime";
+    int moveSpeed = 100;
+    bool isGunEquiped = true;
+    bool isTransformed = false;
+    PowerCore coreStatus(1);
+    Transformer transformer(callSign, moveSpeed, isGunEquiped, isTransformed, coreStatus);
+    bool a = transformer.getCoreStatus();
+    std::cout<< a <<"\n";
+    transformer.setCoreStatus(a);
+    bool b = transformer.getCoreStatus();
+    std::cout<< b <<"\n";
 }
