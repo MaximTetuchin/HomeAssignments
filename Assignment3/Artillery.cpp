@@ -6,7 +6,7 @@ Artillery::Artillery(std::string callSign, int moveSpeed, bool isGunEquiped, boo
       _range(range), 
       _ammoCapacity(ammoCapacity) {}
 void Artillery::fire() {
-    std::cout << "Artillery unit is firing!" << std::endl;
+    std::cout << "Artillery unit is firing!\n";
 }
 int Artillery::getRange() {
     return _range;

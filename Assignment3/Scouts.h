@@ -10,10 +10,10 @@ public:
 
     //! Сеттеры
     int getStealthLevel();
-    void setStealthLevel(int level);
+    int getSensorRange();
 
     //! Геттеры
-    int getSensorRange();
+    void setStealthLevel(int level);
     void setSensorRange(int range);
 
 private:

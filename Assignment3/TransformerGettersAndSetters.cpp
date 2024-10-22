@@ -14,7 +14,7 @@ void Transformer::setIsTransformed(bool isTransformed) {
     _isTransformed = isTransformed;
 }
 void Transformer::setCoreStatus(bool isCoreActive){
-    _powerCore.ChangeStatus();
+    _powerCore.changeStatus();
 }
 
 //! Геттеры (реализация)
@@ -31,8 +31,8 @@ bool Transformer::getIsTransformed() {
     return _isTransformed;
 }
 bool Transformer::getCoreStatus() {
-    return _powerCore.GetStatus();
+    return _powerCore.getStatus();
 }
 std::string Transformer::getStatus(RobotStatus& status){
-    return status.GetStatus();
+    return status.getStatus();
 }

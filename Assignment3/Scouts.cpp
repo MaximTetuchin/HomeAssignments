@@ -9,7 +9,7 @@ Scouts::Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTr
       _sensorRange(sensorRange) {}
 
 void Scouts::performRecon() {
-    std::cout <<"Recon was performed."<< std::endl;
+    std::cout <<"Recon was performed.\n";
 }
 
 //! Геттеры

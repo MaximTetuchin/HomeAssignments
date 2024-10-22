@@ -1,9 +1,9 @@
 #include "Status.h"
 RobotStatus::RobotStatus(std::string status): _status(status){};
-std::string RobotStatus::GetStatus(){
+std::string RobotStatus::getStatus(){
     return _status;
 }
 
-void RobotStatus::SetStatus(std::string newStatus){
+void RobotStatus::setStatus(std::string newStatus){
     _status = newStatus;
 }

@@ -24,21 +24,3 @@ void Transformer::Transform() {
         _isTransformed = 0;
     }
 }
-
-int main(){
-    std::string callSign = "Optimus Prime";
-    int moveSpeed = 100;
-    bool isGunEquiped = true;
-    bool isTransformed = false;
-    PowerCore coreStatus(1);
-    Transformer transformer(callSign, moveSpeed, isGunEquiped, isTransformed, coreStatus);
-    bool a = transformer.getCoreStatus();
-    std::cout<< a <<"\n";
-    transformer.setCoreStatus(a);
-    bool b = transformer.getCoreStatus();
-    std::cout<< b <<"\n";
-    std::string q = "Hiiiii";
-    RobotStatus prime(q);
-    std::cout<<transformer.getStatus(prime)<<"\n";
-    
-}

@@ -7,7 +7,7 @@ Soldiers::Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool 
       _firepower(firepower) {}
 
 void Soldiers::engageCombat() {
-    std::cout << "Soldier is engaging in combat!" << std::endl;
+    std::cout << "Soldier is engaging in combat!\n";
 }
 
 int Soldiers::getArmorLevel() {
