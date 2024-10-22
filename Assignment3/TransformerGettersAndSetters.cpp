@@ -18,18 +18,21 @@ void Transformer::setCoreStatus(bool isCoreActive){
 }
 
 //! Геттеры (реализация)
-std::string Transformer::getCallSign() const {
+std::string Transformer::getCallSign() {
     return _callSign;
 }
-int Transformer::getMoveSpeed() const {
+int Transformer::getMoveSpeed() {
     return _moveSpeed;
 }
-bool Transformer::getIsGunEquiped() const {
+bool Transformer::getIsGunEquiped() {
     return _isGunEquiped;
 }
-bool Transformer::getIsTransformed() const {
+bool Transformer::getIsTransformed() {
     return _isTransformed;
 }
-bool Transformer::getCoreStatus() const {
+bool Transformer::getCoreStatus() {
     return _powerCore.GetStatus();
+}
+std::string Transformer::getStatus(RobotStatus& status){
+    return status.GetStatus();
 }

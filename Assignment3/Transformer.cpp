@@ -37,4 +37,8 @@ int main(){
     transformer.setCoreStatus(a);
     bool b = transformer.getCoreStatus();
     std::cout<< b <<"\n";
+    std::string q = "Hiiiii";
+    RobotStatus prime(q);
+    std::cout<<transformer.getStatus(prime)<<"\n";
+    
 }

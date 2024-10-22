@@ -5,8 +5,8 @@
 class PowerCore{
     public:
         PowerCore(bool CoreStatus);
-        void ChangeStatus();
-        bool GetStatus() const;
+        void changeStatus();
+        bool getStatus();
     private:
         bool _CoreStatus;   
 };

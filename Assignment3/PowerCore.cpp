@@ -1,6 +1,6 @@
 #include "PowerCore.h"
 PowerCore::PowerCore(bool CoreStatus): _CoreStatus(CoreStatus){};
-void PowerCore::ChangeStatus(){
+void PowerCore::changeStatus(){
     if (_CoreStatus == 1){
         _CoreStatus = 0;
     } else {
@@ -8,6 +8,6 @@ void PowerCore::ChangeStatus(){
     };
 }
 
-bool PowerCore::GetStatus() const {
+bool PowerCore::getStatus(){
     return _CoreStatus;
 }
