@@ -1,6 +1,8 @@
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 3
+*/
 #include "Transformer.h"
 #include "PowerCore.h"
-
 //! Конструктор и деструктор (реализация)
 Transformer::Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed,PowerCore coreStatus):
     _callSign(callSign), 

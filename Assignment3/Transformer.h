@@ -1,3 +1,6 @@
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 3
+*/
 #ifndef TRANSFORMER
 #define TRANSFORMER
 #include "PowerCore.h"

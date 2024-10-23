@@ -1,3 +1,6 @@
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 3
+*/
 #ifndef ARTILLERY
 #define ARTILLERY
 #include "Transformer.h"

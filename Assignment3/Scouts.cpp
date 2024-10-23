@@ -1,4 +1,6 @@
-
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 3
+*/
 #include "Scouts.h"
 #include <iostream>
 

@@ -1,9 +1,12 @@
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 3
+*/
 #include <gtest/gtest.h>
 #include "Transformer.h"
-#include "PowerCore.h" // Предполагается, что класс PowerCore также определен
-#include "Status.h" // Подключаем новый класс RobotStatus
+#include "PowerCore.h"
+#include "Status.h"
 
-// Тестируем класс RobotStatus
+//! Тестируем класс RobotStatus
 TEST(RobotStatusTest, ConstructorAndGetStatus) {
     RobotStatus status("Operational");
     EXPECT_EQ(status.getStatus(), "Operational");
@@ -15,7 +18,7 @@ TEST(RobotStatusTest, SetGetStatus) {
     EXPECT_EQ(status.getStatus(), "Damaged");
 }
 
-// Тестируем класс Transformer
+//! Тестируем класс Transformer
 TEST(TransformerTest, ConstructorAndGetCallSign) {
     PowerCore core(true);
     RobotStatus status("Operational");
@@ -48,7 +51,7 @@ TEST(TransformerTest, ConstructorAndGetCoreStatus) {
     PowerCore core(true);
     RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
-    EXPECT_TRUE(transformer.getCoreStatus()); // Проверка статуса ядра
+    EXPECT_TRUE(transformer.getCoreStatus());
 }
 
 // Тестируем сеттеры
@@ -80,21 +83,24 @@ TEST(TransformerTest, SetGetIsTransformed) {
     PowerCore core(true);
     RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
-    
     transformer.setIsTransformed(true);
     EXPECT_TRUE(transformer.getIsTransformed());
 }
 
-// Тестируем метод getStatus
 TEST(TransformerTest, GetStatus) {
     PowerCore core(true);
     RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
-
-    EXPECT_EQ(transformer.getStatus(status), "Operational"); // Проверка статуса
+    EXPECT_EQ(transformer.getStatus(status), "Operational");
 }
 
-// Остальные тесты...
+TEST(TransformerTest, changeStatusTest) {
+    PowerCore core(false);
+    core.changeStatus();
+    RobotStatus status("Operational");
+    Transformer transformer("Optimus", 100, true, false, core);
+    EXPECT_TRUE(transformer.getCoreStatus());
+}
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);

@@ -1,3 +1,6 @@
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 3
+*/
 #include "Status.h"
 RobotStatus::RobotStatus(std::string status): _status(status){};
 std::string RobotStatus::getStatus(){
