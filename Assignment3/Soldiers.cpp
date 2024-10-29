@@ -5,7 +5,7 @@ Assignment 3
 #include <iostream>
 
 Soldiers::Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int armorLevel, int firepower)
-    : Transformer(callSign, moveSpeed, isGunEquiped, isTransformed, coreStatus), // Инициализация базового класса
+    : Transformer(callSign, moveSpeed, isGunEquiped, isTransformed, coreStatus),
       _armorLevel(armorLevel), 
       _firepower(firepower) {}
 

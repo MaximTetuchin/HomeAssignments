@@ -2,16 +2,16 @@
 Hello_world project
 */
 
-/* Инпуты */
+/* Inputs */
 #include "functions_declaration.hpp"
 
-/* Код */
+/* Main code */
 int main(){
-    std::cout<<"Чтобы выйти из цикла,отправьте программе строку '-'\n";
+    std::cout<<"To exit the cycle type '-'\n";
     while (true)
     {
         std::string word;
-        std::cout << "Введите текст: ";
+        std::cout << "Enter a word: ";
         std::cin>> word ;
         if (word=="-"){
             break;

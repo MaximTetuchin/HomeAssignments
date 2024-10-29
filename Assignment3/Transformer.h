@@ -10,22 +10,22 @@ Assignment 3
 
 class Transformer {
     public:
-        //! Конструктор и деструктор (Объявление)
+        //! Constructor and destructor
         Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore core);
         ~Transformer();
 
-        //! Методы класса (Объявление)
+        //! Class methods
         void pullOutTheGun();
         void Transform();
 
-        //! Сеттеры (Объявление)
+        //! Setters
         void setCallSign(const std::string& callSign);
         void setMoveSpeed(int moveSpeed);
         void setIsGunEquiped(bool isGunEquiped);
         void setIsTransformed(bool isTransformed);
         void setCoreStatus(bool isCoreActive);
 
-        //! Геттеры (Объявление)
+        //! Getters
         std::string getCallSign();
         int getMoveSpeed();
         bool getIsGunEquiped();
@@ -33,7 +33,6 @@ class Transformer {
         bool getCoreStatus();
         std::string getStatus(RobotStatus& status);
 
-    //! Поля
     private:
         std::string _callSign;
         int _moveSpeed;

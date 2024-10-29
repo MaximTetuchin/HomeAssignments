@@ -5,7 +5,7 @@ Assignment 3
 #include "Scouts.h"
 #include "PowerCore.h"
 
-//! Тестируем конструктор ScoutsTest
+//! ScoutsTest cinstructor test
 TEST(ScoutsTest, ConstructorTest) {
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
@@ -13,23 +13,23 @@ TEST(ScoutsTest, ConstructorTest) {
     EXPECT_EQ(scout.getStealthLevel(), 100);
 }
 
-//! Тестируем геттеры
-//! Тестируем getStealthLevel
+//! Getters test
+//! getStealthLevel test
 TEST(ScoutsTest, getStealthLevelTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(scout.getStealthLevel(),100);
 }
 
-//! Тестируем getSensorRange
+//! getSensorRange test
 TEST(ScoutsTest, getSensorRangeTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(scout.getSensorRange(),50);
 }
 
-//! Тестируем сеттеры
-//! Тестируем setRangeTest
+//! Setters test
+//! setRange test
 TEST(ScoutsTest, setStealthTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
@@ -37,18 +37,18 @@ TEST(ScoutsTest, setStealthTest){
     EXPECT_EQ(scout.getStealthLevel(),200);
 }
 
-//! Тестируем setSensorRange
+//! setSensorRange test
 TEST(ScoutsTest, setSensorRangeTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
     scout.setSensorRange(200);
     EXPECT_EQ(scout.getSensorRange(),200);
 }
-//! Тест метода
+//! method test
 TEST(ScoutsTest, reconTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
-    std::ostringstream buffer; //! Работать будем через буфер
+    std::ostringstream buffer; 
     std::streambuf* oldCoutBuffer = std::cout.rdbuf(buffer.rdbuf());
     scout.performRecon();
     std::cout.rdbuf(oldCoutBuffer);

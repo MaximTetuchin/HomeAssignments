@@ -5,7 +5,7 @@ Assignment 3
 #include "Artillery.h"
 #include "PowerCore.h"
 
-//! Тестируем конструктор Artillery
+//!  Artillery constructor test
 TEST(ArtilleryTest, ConstructorTest) {
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
@@ -13,23 +13,23 @@ TEST(ArtilleryTest, ConstructorTest) {
     EXPECT_EQ(artillery.getAmmoCapacity(), 50);
 }
 
-//! Тестируем геттеры
-//! Тестируем getRange
+//! Getters test
+//! getRange test
 TEST(ArtilleryTest, getRangeTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(artillery.getRange(),100);
 }
 
-//! Тестируем getAmmoCapacity
+//! getAmmoCapacity test
 TEST(ArtilleryTest, getAmmoCapacityTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(artillery.getAmmoCapacity(),50);
 }
 
-//! Тестируем сеттеры
-//! Тестируем setRangeTest
+//! Setters test
+//! setRange test
 TEST(ArtilleryTest, setRangeTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
@@ -37,7 +37,7 @@ TEST(ArtilleryTest, setRangeTest){
     EXPECT_EQ(artillery.getRange(),200);
 }
 
-//! Тестируем setAmmoCapacity
+//! setAmmoCapacity test
 TEST(ArtilleryTest, setAmmoCapacityTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
@@ -45,12 +45,12 @@ TEST(ArtilleryTest, setAmmoCapacityTest){
     EXPECT_EQ(artillery.getAmmoCapacity(),200);
 }
 
-//! Тестируем методы
-//! Тестируем fire
+//! methods test
+//! fire method test
 TEST(ArtilleryTest, FireTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
-    std::ostringstream buffer; //! Работать будем через буфер
+    std::ostringstream buffer; 
     std::streambuf* oldCoutBuffer = std::cout.rdbuf(buffer.rdbuf());
     artillery.fire();
     std::cout.rdbuf(oldCoutBuffer);

@@ -6,7 +6,7 @@ Assignment 3
 #include "PowerCore.h"
 #include "Status.h"
 
-//! Тестируем класс RobotStatus
+//! RobotStatus class test
 TEST(RobotStatusTest, ConstructorAndGetStatus) {
     RobotStatus status("Operational");
     EXPECT_EQ(status.getStatus(), "Operational");
@@ -18,7 +18,7 @@ TEST(RobotStatusTest, SetGetStatus) {
     EXPECT_EQ(status.getStatus(), "Damaged");
 }
 
-//! Тестируем класс Transformer
+//! Transformer class test
 TEST(TransformerTest, ConstructorAndGetCallSign) {
     PowerCore core(true);
     RobotStatus status("Operational");
@@ -54,7 +54,7 @@ TEST(TransformerTest, ConstructorAndGetCoreStatus) {
     EXPECT_TRUE(transformer.getCoreStatus());
 }
 
-// Тестируем сеттеры
+//! Setters test
 TEST(TransformerTest, SetGetCallSign) {
     PowerCore core(true);
     RobotStatus status("Operational");

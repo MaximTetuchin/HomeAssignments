@@ -2,10 +2,10 @@
 Hello_world project
 */
 
-/* Инпуты */
+/* Inputs */
 #include "functions_declaration.hpp"
 
-/* Код */
+/* Code */
 void HelloWorldOutput(std::string word){
     std::cout << "Hello, " << word << "\n";
 }

@@ -11,11 +11,11 @@ public:
     Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int _stealthLevel, int _sensorRange);
     void performRecon();
 
-    //! Сеттеры
+    //! Setters
     int getStealthLevel();
     int getSensorRange();
 
-    //! Геттеры
+    //! Getters
     void setStealthLevel(int level);
     void setSensorRange(int range);
 

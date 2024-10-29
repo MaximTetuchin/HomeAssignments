@@ -3,7 +3,7 @@ Assignment 3
 */
 #include "Transformer.h"
 
-//! Сеттеры (реализация)
+//! Setters
 void Transformer::setCallSign(const std::string& callSign) {
     _callSign = callSign;
 }
@@ -20,7 +20,7 @@ void Transformer::setCoreStatus(bool isCoreActive){
     _powerCore.changeStatus();
 }
 
-//! Геттеры (реализация)
+//! Getters
 std::string Transformer::getCallSign() {
     return _callSign;
 }

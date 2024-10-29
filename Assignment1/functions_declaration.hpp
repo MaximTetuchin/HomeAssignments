@@ -2,11 +2,11 @@
 Hello_world project
 */
 
-/* Инпуты */
+/* Inputs */
 #include <string>
 #include <iostream>
 
-/* include guard-ы */
+/* include guards */
 #ifndef Assigment1_output_function
 #define Assigment1_output_function
 void HelloWorldOutput(std::string word);

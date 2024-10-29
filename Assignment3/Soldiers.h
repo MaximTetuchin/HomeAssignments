@@ -11,11 +11,11 @@ public:
     Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int armorLevel, int firepower);
     void engageCombat();
 
-    //! Геттеры
+    //! Getters
     int getArmorLevel();
     int getFirepower();
 
-    //! Сеттеры
+    //! Setters
     void setArmorLevel(int level);
     void setFirepower(int power);
 

@@ -3,7 +3,7 @@ Assignment 3
 */
 #include "Transformer.h"
 #include "PowerCore.h"
-//! Конструктор и деструктор (реализация)
+//! Constructor and destructor
 Transformer::Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed,PowerCore coreStatus):
     _callSign(callSign), 
     _moveSpeed(moveSpeed), 
@@ -12,7 +12,7 @@ Transformer::Transformer(std::string callSign, int moveSpeed, bool isGunEquiped,
     _powerCore(coreStatus){}
 Transformer::~Transformer(){};
 
-//! Методы (реализация)
+//! Methods
 void Transformer::pullOutTheGun() {
     if (_isGunEquiped == 0) {
         _isGunEquiped = 1;

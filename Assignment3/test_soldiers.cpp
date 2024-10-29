@@ -40,7 +40,7 @@ TEST(SoldiersTest, setFirepowerTest) {
 TEST(SoldiersTest, engageCombatTest) {
     PowerCore core(true);
     Soldiers soldier("LEDENDA", 10, true, false, core, 100, 50);
-    std::ostringstream buffer; //! Работать будем через буфер
+    std::ostringstream buffer;
     std::streambuf* oldCoutBuffer = std::cout.rdbuf(buffer.rdbuf());
     soldier.engageCombat();
     std::cout.rdbuf(oldCoutBuffer);

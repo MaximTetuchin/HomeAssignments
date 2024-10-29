@@ -11,11 +11,11 @@ public:
     Artillery(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int range, int ammoCapacity);
     void fire();
 
-    //! Геттеры
+    //! Getters
     int getRange();
     int getAmmoCapacity();
 
-    //! Сеттеры
+    //! Setters
     void setRange(int r);
     void setAmmoCapacity(int capacity);
 

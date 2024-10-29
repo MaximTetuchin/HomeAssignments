@@ -4,9 +4,9 @@ Assignment 3
 #include "Scouts.h"
 #include <iostream>
 
-//! Конструктор
+//! Constructor
 Scouts::Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int stealthLevel, int sensorRange)
-    : Transformer(callSign, moveSpeed, isGunEquiped, isTransformed, coreStatus), //! Наследуем
+    : Transformer(callSign, moveSpeed, isGunEquiped, isTransformed, coreStatus), 
       _stealthLevel(stealthLevel), 
       _sensorRange(sensorRange) {}
 
@@ -14,7 +14,7 @@ void Scouts::performRecon() {
     std::cout <<"Recon was performed.\n";
 }
 
-//! Геттеры
+//! Getters
 int Scouts::getStealthLevel() {
     return _stealthLevel;
 }
@@ -22,7 +22,7 @@ int Scouts::getSensorRange() {
     return _sensorRange;
 }
 
-//! Сеттеры
+//! Setters
 void Scouts::setStealthLevel(int level) {
     _stealthLevel = level;
 }
