@@ -6,19 +6,24 @@
 #ifndef IMAGE
 #define IMAGE
 class image{
-    //! Constructor
+    //! Constructor and destructor
     public:
         image(int width, int height, std::string path);
+        ~image();
 
     //! Methods
     public:
-        void openImage();
+        void readImage();
+        void rotateImage();
+        void saveToRaw(std::string outputFileName);
+
+        void checkMatrix(); //* Debug function
 
     //! Variables
     private:
         int _width;
         int _height;
         std::string _path;
-        uint8_t* imageData = new uint8_t[_width * _height];
+        uint8_t* _imageMatrix;
 };  
 #endif

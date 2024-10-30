@@ -2,10 +2,10 @@ from PIL import Image
 import numpy as np
 
 # Параметры изображения
-width, height = 736, 615  # Замените на реальные размеры изображения
+width, height = 615, 736  # Замените на реальные размеры изображения
 
 # Чтение "сырого" файла
-input_file_path = "ImageExample\output_image.raw"
+input_file_path = "Monika.raw"
 with open(input_file_path, "rb") as f:
     raw_data = f.read()
 
