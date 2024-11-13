@@ -1,5 +1,5 @@
 /* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
-Assignment 3
+Assignment 4
 */
 #include "Artillery.h"
 #include <iostream>

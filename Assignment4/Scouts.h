@@ -1,5 +1,5 @@
 /* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
-Assignment 3
+Assignment 4
 */
 #ifndef SCOUTS
 #define SCOUTS
@@ -14,7 +14,7 @@ public:
     Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed);
     Scouts(std::string callSign, int moveSpeed, bool isGunEquiped);
     Scouts(std::string callSign, int moveSpeed);
-    
+
     void performRecon();
     std::string info();
     friend std::ostream& operator<<(std::ostream& os,Scouts& scout);
