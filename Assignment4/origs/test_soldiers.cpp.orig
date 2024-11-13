@@ -5,38 +5,33 @@ Assignment 3
 #include "Soldiers.h"
 #include "PowerCore.h"
 
-TEST(SoldiersTest, getArmorLevelTest)
-{
+TEST(SoldiersTest, getArmorLevelTest) {
     PowerCore core(true);
     Soldiers soldier("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(soldier.getArmorLevel(), 100);
 }
 
-TEST(SoldiersTest, getFirepowerTest)
-{
+TEST(SoldiersTest, getFirepowerTest) {
     PowerCore core(true);
     Soldiers soldier("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(soldier.getFirepower(), 50);
 }
 
-TEST(SoldiersTest, setArmorLevelTest)
-{
+TEST(SoldiersTest, setArmorLevelTest) {
     PowerCore core(true);
     Soldiers soldier("LEDENDA", 10, true, false, core, 100, 50);
     soldier.setArmorLevel(10);
     EXPECT_EQ(soldier.getArmorLevel(), 10);
 }
 
-TEST(SoldiersTest, setFirepowerTest)
-{
+TEST(SoldiersTest, setFirepowerTest) {
     PowerCore core(true);
     Soldiers soldier("LEDENDA", 10, true, false, core, 100, 50);
     soldier.setFirepower(10);
     EXPECT_EQ(soldier.getFirepower(), 10);
 }
 
-TEST(SoldiersTest, engageCombatTest)
-{
+TEST(SoldiersTest, engageCombatTest) {
     PowerCore core(true);
     Soldiers soldier("LEDENDA", 10, true, false, core, 100, 50);
     std::ostringstream buffer;
@@ -46,8 +41,7 @@ TEST(SoldiersTest, engageCombatTest)
     EXPECT_EQ(buffer.str(), "Soldier is engaging in combat!\n");
 }
 
-TEST(SoldiersConstructorTests, ConstructorWithAllParameters)
-{
+TEST(SoldiersConstructorTests, ConstructorWithAllParameters) {
     PowerCore coreStatus(true);
     Soldiers soldier("Ironhide", 50, true, true, coreStatus, 80, 120);
 
@@ -60,8 +54,7 @@ TEST(SoldiersConstructorTests, ConstructorWithAllParameters)
     EXPECT_EQ(soldier.getFirepower(), 120);
 }
 
-TEST(SoldiersConstructorTests, ConstructorWithPartialParameters_NoFirepower)
-{
+TEST(SoldiersConstructorTests, ConstructorWithPartialParameters_NoFirepower) {
     PowerCore coreStatus(true);
     Soldiers soldier("Ratchet", 40, true, false, coreStatus, 50);
 
@@ -74,8 +67,7 @@ TEST(SoldiersConstructorTests, ConstructorWithPartialParameters_NoFirepower)
     EXPECT_EQ(soldier.getFirepower(), 0);  // Firepower should default to 0
 }
 
-TEST(SoldiersConstructorTests, ConstructorWithMinimumParameters)
-{
+TEST(SoldiersConstructorTests, ConstructorWithMinimumParameters) {
     Soldiers soldier("Bumblebee", 30);
 
     EXPECT_EQ(soldier.getCallSign(), "Bumblebee");

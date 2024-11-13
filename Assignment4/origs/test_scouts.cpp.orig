@@ -6,8 +6,7 @@ Assignment 3
 #include "PowerCore.h"
 
 //! ScoutsTest cinstructor test
-TEST(ScoutsTest, ConstructorTest)
-{
+TEST(ScoutsTest, ConstructorTest) {
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(scout.getSensorRange(), 50);
@@ -16,16 +15,14 @@ TEST(ScoutsTest, ConstructorTest)
 
 //! Getters test
 //! getStealthLevel test
-TEST(ScoutsTest, getStealthLevelTest)
-{
+TEST(ScoutsTest, getStealthLevelTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(scout.getStealthLevel(),100);
 }
 
 //! getSensorRange test
-TEST(ScoutsTest, getSensorRangeTest)
-{
+TEST(ScoutsTest, getSensorRangeTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(scout.getSensorRange(),50);
@@ -33,8 +30,7 @@ TEST(ScoutsTest, getSensorRangeTest)
 
 //! Setters test
 //! setRange test
-TEST(ScoutsTest, setStealthTest)
-{
+TEST(ScoutsTest, setStealthTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
     scout.setStealthLevel(200);
@@ -42,27 +38,24 @@ TEST(ScoutsTest, setStealthTest)
 }
 
 //! setSensorRange test
-TEST(ScoutsTest, setSensorRangeTest)
-{
+TEST(ScoutsTest, setSensorRangeTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
     scout.setSensorRange(200);
     EXPECT_EQ(scout.getSensorRange(),200);
 }
 //! method test
-TEST(ScoutsTest, reconTest)
-{
+TEST(ScoutsTest, reconTest){
     PowerCore core(true);
     Scouts scout("LEDENDA", 10, true, false, core, 100, 50);
-    std::ostringstream buffer;
+    std::ostringstream buffer; 
     std::streambuf* oldCoutBuffer = std::cout.rdbuf(buffer.rdbuf());
     scout.performRecon();
     std::cout.rdbuf(oldCoutBuffer);
     EXPECT_EQ(buffer.str(), "Recon was performed.\n");
 }
 
-TEST(ScoutsConstructorTests, ConstructorWithAllParameters)
-{
+TEST(ScoutsConstructorTests, ConstructorWithAllParameters) {
     PowerCore coreStatus(true);
     Scouts scout("Shadow", 60, true, false, coreStatus, 80, 300);
 
@@ -75,8 +68,7 @@ TEST(ScoutsConstructorTests, ConstructorWithAllParameters)
     EXPECT_EQ(scout.getSensorRange(), 300);
 }
 
-TEST(ScoutsConstructorTests, ConstructorWithPartialParameters_NoSensorRange)
-{
+TEST(ScoutsConstructorTests, ConstructorWithPartialParameters_NoSensorRange) {
     PowerCore coreStatus(true);
     Scouts scout("Ghost", 55, false, true, coreStatus, 70);
 
@@ -89,8 +81,7 @@ TEST(ScoutsConstructorTests, ConstructorWithPartialParameters_NoSensorRange)
     EXPECT_EQ(scout.getSensorRange(), 0);  // Sensor range should default to 0
 }
 
-TEST(ScoutsConstructorTests, ConstructorWithMinimumParameters)
-{
+TEST(ScoutsConstructorTests, ConstructorWithMinimumParameters) {
     Scouts scout("Recon", 40);
 
     EXPECT_EQ(scout.getCallSign(), "Recon");

@@ -4,41 +4,53 @@ Assignment 3
 #include "Transformer.h"
 
 //! Setters
-void Transformer::setCallSign(const std::string& callSign) {
+void Transformer::setCallSign(const std::string& callSign)
+{
     _callSign = callSign;
 }
-void Transformer::setMoveSpeed(int moveSpeed) {
+void Transformer::setMoveSpeed(int moveSpeed)
+{
     _moveSpeed = moveSpeed;
 }
-void Transformer::setIsGunEquiped(bool isGunEquiped) {
+void Transformer::setIsGunEquiped(bool isGunEquiped)
+{
     _isGunEquiped = isGunEquiped;
 }
-void Transformer::setIsTransformed(bool isTransformed) {
+void Transformer::setIsTransformed(bool isTransformed)
+{
     _isTransformed = isTransformed;
 }
-void Transformer::setCoreStatus(bool isCoreActive){
+void Transformer::setCoreStatus(bool isCoreActive)
+{
     _powerCore.changeStatus();
 }
-void Transformer::setStatus(std::string newStatus,RobotStatus& status){
+void Transformer::setStatus(std::string newStatus,RobotStatus& status)
+{
     status.setStatus(newStatus);
 }
 
 //! Getters
-std::string Transformer::getCallSign() {
+std::string Transformer::getCallSign()
+{
     return _callSign;
 }
-int Transformer::getMoveSpeed() {
+int Transformer::getMoveSpeed()
+{
     return _moveSpeed;
 }
-bool Transformer::getIsGunEquiped() {
+bool Transformer::getIsGunEquiped()
+{
     return _isGunEquiped;
 }
-bool Transformer::getIsTransformed() {
+bool Transformer::getIsTransformed()
+{
     return _isTransformed;
 }
-bool Transformer::getCoreStatus() {
+bool Transformer::getCoreStatus()
+{
     return _powerCore.getStatus();
 }
-std::string Transformer::getStatus(RobotStatus& status){
+std::string Transformer::getStatus(RobotStatus& status)
+{
     return status.getStatus();
 }

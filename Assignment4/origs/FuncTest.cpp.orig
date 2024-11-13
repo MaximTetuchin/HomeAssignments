@@ -4,8 +4,7 @@
 #include <iostream>
 #include "Artillery.h"
 
-int main()
-{
+int main(){
     PowerCore Core(true); // Robot Core status, composition
     RobotStatus Status("Soldier"); // Robot Status, associativity
     Transformer Autobot1("Raf",100);
@@ -20,5 +19,5 @@ int main()
     Scouts Autobot3("Legend",110);
     Artillery Autobot4("Legend",100);
     std::cout<<Autobot4;
-
+    
 }

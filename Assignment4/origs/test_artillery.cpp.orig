@@ -7,16 +7,14 @@ Assignment 3
 
 //! Getters test
 //! getRange test
-TEST(ArtilleryTest, getRangeTest)
-{
+TEST(ArtilleryTest, getRangeTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(artillery.getRange(),100);
 }
 
 //! getAmmoCapacity test
-TEST(ArtilleryTest, getAmmoCapacityTest)
-{
+TEST(ArtilleryTest, getAmmoCapacityTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
     EXPECT_EQ(artillery.getAmmoCapacity(),50);
@@ -24,8 +22,7 @@ TEST(ArtilleryTest, getAmmoCapacityTest)
 
 //! Setters test
 //! setRange test
-TEST(ArtilleryTest, setRangeTest)
-{
+TEST(ArtilleryTest, setRangeTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
     artillery.setRange(200);
@@ -33,8 +30,7 @@ TEST(ArtilleryTest, setRangeTest)
 }
 
 //! setAmmoCapacity test
-TEST(ArtilleryTest, setAmmoCapacityTest)
-{
+TEST(ArtilleryTest, setAmmoCapacityTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
     artillery.setAmmoCapacity(200);
@@ -43,11 +39,10 @@ TEST(ArtilleryTest, setAmmoCapacityTest)
 
 //! methods test
 //! fire method test
-TEST(ArtilleryTest, FireTest)
-{
+TEST(ArtilleryTest, FireTest){
     PowerCore core(true);
     Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
-    std::ostringstream buffer;
+    std::ostringstream buffer; 
     std::streambuf* oldCoutBuffer = std::cout.rdbuf(buffer.rdbuf());
     artillery.fire();
     std::cout.rdbuf(oldCoutBuffer);
@@ -55,8 +50,7 @@ TEST(ArtilleryTest, FireTest)
 
 }
 
-TEST(ArtilleryConstructorTests, ConstructorWithAllParameters)
-{
+TEST(ArtilleryConstructorTests, ConstructorWithAllParameters) {
     PowerCore coreStatus(true);
     Artillery artillery("Thunder", 30, true, true, coreStatus, 500, 100);
 
@@ -69,8 +63,7 @@ TEST(ArtilleryConstructorTests, ConstructorWithAllParameters)
     EXPECT_EQ(artillery.getAmmoCapacity(), 100);
 }
 
-TEST(ArtilleryConstructorTests, ConstructorWithPartialParameters_NoAmmoCapacity)
-{
+TEST(ArtilleryConstructorTests, ConstructorWithPartialParameters_NoAmmoCapacity) {
     PowerCore coreStatus(false);
     Artillery artillery("Blast", 25, true, false, coreStatus, 300);
 
@@ -83,8 +76,7 @@ TEST(ArtilleryConstructorTests, ConstructorWithPartialParameters_NoAmmoCapacity)
     EXPECT_EQ(artillery.getAmmoCapacity(), 0);  // Ammo capacity should default to 0
 }
 
-TEST(ArtilleryConstructorTests, ConstructorWithMinimumParameters)
-{
+TEST(ArtilleryConstructorTests, ConstructorWithMinimumParameters) {
     Artillery artillery("Cannon", 20);
 
     EXPECT_EQ(artillery.getCallSign(), "Cannon");
