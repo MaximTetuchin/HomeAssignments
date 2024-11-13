@@ -5,14 +5,6 @@ Assignment 3
 #include "Artillery.h"
 #include "PowerCore.h"
 
-//!  Artillery constructor test
-TEST(ArtilleryTest, ConstructorTest) {
-    PowerCore core(true);
-    Artillery artillery("LEDENDA", 10, true, false, core, 100, 50);
-    EXPECT_EQ(artillery.getRange(), 100);
-    EXPECT_EQ(artillery.getAmmoCapacity(), 50);
-}
-
 //! Getters test
 //! getRange test
 TEST(ArtilleryTest, getRangeTest){
@@ -56,4 +48,42 @@ TEST(ArtilleryTest, FireTest){
     std::cout.rdbuf(oldCoutBuffer);
     EXPECT_EQ(buffer.str(), "Artillery unit is firing!\n");
 
+}
+
+TEST(ArtilleryConstructorTests, ConstructorWithAllParameters) {
+    PowerCore coreStatus(true);
+    Artillery artillery("Thunder", 30, true, true, coreStatus, 500, 100);
+
+    EXPECT_EQ(artillery.getCallSign(), "Thunder");
+    EXPECT_EQ(artillery.getMoveSpeed(), 30);
+    EXPECT_TRUE(artillery.getIsGunEquiped());
+    EXPECT_TRUE(artillery.getIsTransformed());
+    EXPECT_TRUE(artillery.getCoreStatus());
+    EXPECT_EQ(artillery.getRange(), 500);
+    EXPECT_EQ(artillery.getAmmoCapacity(), 100);
+}
+
+TEST(ArtilleryConstructorTests, ConstructorWithPartialParameters_NoAmmoCapacity) {
+    PowerCore coreStatus(false);
+    Artillery artillery("Blast", 25, true, false, coreStatus, 300);
+
+    EXPECT_EQ(artillery.getCallSign(), "Blast");
+    EXPECT_EQ(artillery.getMoveSpeed(), 25);
+    EXPECT_TRUE(artillery.getIsGunEquiped());
+    EXPECT_FALSE(artillery.getIsTransformed());
+    EXPECT_FALSE(artillery.getCoreStatus());
+    EXPECT_EQ(artillery.getRange(), 300);
+    EXPECT_EQ(artillery.getAmmoCapacity(), 0);  // Ammo capacity should default to 0
+}
+
+TEST(ArtilleryConstructorTests, ConstructorWithMinimumParameters) {
+    Artillery artillery("Cannon", 20);
+
+    EXPECT_EQ(artillery.getCallSign(), "Cannon");
+    EXPECT_EQ(artillery.getMoveSpeed(), 20);
+    EXPECT_FALSE(artillery.getIsGunEquiped());
+    EXPECT_FALSE(artillery.getIsTransformed());
+    EXPECT_FALSE(artillery.getCoreStatus());  // Assuming default PowerCore status is false
+    EXPECT_EQ(artillery.getRange(), 0);  // Range should default to 0
+    EXPECT_EQ(artillery.getAmmoCapacity(), 0);  // Ammo capacity should default to 0
 }

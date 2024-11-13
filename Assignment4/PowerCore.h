@@ -8,6 +8,7 @@ Assignment 3
 class PowerCore{
     public:
         PowerCore(bool CoreStatus);
+        PowerCore();
         void changeStatus();
         bool getStatus();
     private:

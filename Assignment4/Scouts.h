@@ -9,7 +9,15 @@ Assignment 3
 class Scouts : public Transformer {
 public:
     Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int _stealthLevel, int _sensorRange);
+    Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int _stealthLevel);
+    Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus);
+    Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed);
+    Scouts(std::string callSign, int moveSpeed, bool isGunEquiped);
+    Scouts(std::string callSign, int moveSpeed);
+    
     void performRecon();
+    std::string info();
+    friend std::ostream& operator<<(std::ostream& os,Scouts& scout);
 
     //! Setters
     int getStealthLevel();

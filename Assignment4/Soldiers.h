@@ -9,7 +9,15 @@ Assignment 3
 class Soldiers : public Transformer {
 public:
     Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int armorLevel, int firepower);
+    Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int armorLevel);
+    Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus);
+    Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed);
+    Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped);
+    Soldiers(std::string callSign, int moveSpeed);
+    //! Methods
     void engageCombat();
+    std::string info();
+    friend std::ostream& operator<<(std::ostream& os,Soldiers& soldier);
 
     //! Getters
     int getArmorLevel();

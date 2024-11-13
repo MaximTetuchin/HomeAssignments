@@ -9,7 +9,14 @@ Assignment 3
 class Artillery : public Transformer {
 public:
     Artillery(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int range, int ammoCapacity);
+    Artillery(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int range);
+    Artillery(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus);
+    Artillery(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed);
+    Artillery(std::string callSign, int moveSpeed, bool isGunEquiped);
+    Artillery(std::string callSign, int moveSpeed);
     void fire();
+    std::string info();
+    friend std::ostream& operator<<(std::ostream& os,Artillery& artillery);
 
     //! Getters
     int getRange();

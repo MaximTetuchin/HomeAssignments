@@ -102,6 +102,58 @@ TEST(TransformerTest, changeStatusTest) {
     EXPECT_TRUE(transformer.getCoreStatus());
 }
 
+#include <gtest/gtest.h>
+#include "Transformer.h"
+#include "PowerCore.h"
+
+TEST(TransformerConstructorTests, ConstructorWithFullParameters) {
+    PowerCore coreStatus(true);
+    Transformer transformer("Optimus", 50, true, true, coreStatus);
+
+    EXPECT_EQ(transformer.getCallSign(), "Optimus");
+    EXPECT_EQ(transformer.getMoveSpeed(), 50);
+    EXPECT_TRUE(transformer.getIsGunEquiped());
+    EXPECT_TRUE(transformer.getIsTransformed());
+    EXPECT_TRUE(transformer.getCoreStatus());
+}
+
+TEST(TransformerConstructorTests, ConstructorWithPartialParameters_WithoutCoreStatus) {
+    Transformer transformer("Bumblebee", 40, true, false);
+
+    EXPECT_EQ(transformer.getCallSign(), "Bumblebee");
+    EXPECT_EQ(transformer.getMoveSpeed(), 40);
+    EXPECT_TRUE(transformer.getIsGunEquiped());
+    EXPECT_FALSE(transformer.getIsTransformed());
+    EXPECT_FALSE(transformer.getCoreStatus()); 
+}
+
+TEST(TransformerConstructorTests, ConstructorWithMinimumParameters) {
+    Transformer transformer("Ironhide", 30);
+
+    EXPECT_EQ(transformer.getCallSign(), "Ironhide");
+    EXPECT_EQ(transformer.getMoveSpeed(), 30);
+    EXPECT_FALSE(transformer.getIsGunEquiped());
+    EXPECT_FALSE(transformer.getIsTransformed());
+    EXPECT_FALSE(transformer.getCoreStatus());  // Assuming default PowerCore status is false
+}
+
+TEST(TransformerComparisonTests, CompareTransformers_SpeedComparison) {
+    Transformer fastTransformer("Jetfire", 60);
+    Transformer slowTransformer("Ratchet", 30);
+
+    EXPECT_TRUE(slowTransformer < fastTransformer);
+    EXPECT_FALSE(fastTransformer < slowTransformer);
+}
+
+TEST(TransformerComparisonTests, CompareTransformers_SameSpeed) {
+    Transformer transformer1("HotRod", 50);
+    Transformer transformer2("Wheeljack", 45);
+
+    EXPECT_FALSE(transformer1 < transformer2);
+    EXPECT_TRUE(transformer2 < transformer1);
+}
+
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

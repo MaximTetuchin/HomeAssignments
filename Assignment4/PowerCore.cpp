@@ -3,6 +3,9 @@ Assignment 3
 */
 #include "PowerCore.h"
 PowerCore::PowerCore(bool CoreStatus): _CoreStatus(CoreStatus){};
+PowerCore::PowerCore(){
+    _CoreStatus = 0;
+}
 void PowerCore::changeStatus(){
     if (_CoreStatus == 1){
         _CoreStatus = 0;
