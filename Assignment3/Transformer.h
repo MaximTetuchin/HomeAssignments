@@ -24,7 +24,7 @@ class Transformer {
         void setIsGunEquiped(bool isGunEquiped);
         void setIsTransformed(bool isTransformed);
         void setCoreStatus(bool isCoreActive);
-        void setStatus(std::string Status,RobotStatus& status);
+        void setStatus(std::string newStatus);
 
         //! Getters
         std::string getCallSign();
@@ -32,13 +32,14 @@ class Transformer {
         bool getIsGunEquiped();
         bool getIsTransformed();
         bool getCoreStatus();
-        std::string getStatus(RobotStatus& status);
+        std::string getStatus();
 
     private:
         std::string _callSign;
         int _moveSpeed;
         bool _isGunEquiped;
         bool _isTransformed;
-        PowerCore _powerCore;
+        RobotStatus _robotStatus; //! composition
+        PowerCore _powerCore; //! associativity
 };
 #endif

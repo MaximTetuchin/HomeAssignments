@@ -19,8 +19,8 @@ void Transformer::setIsTransformed(bool isTransformed) {
 void Transformer::setCoreStatus(bool isCoreActive){
     _powerCore.changeStatus();
 }
-void Transformer::setStatus(std::string newStatus,RobotStatus& status){
-    status.setStatus(newStatus);
+void Transformer::setStatus(std::string newStatus){
+    _robotStatus.setStatus(newStatus);
 }
 
 //! Getters
@@ -39,6 +39,6 @@ bool Transformer::getIsTransformed() {
 bool Transformer::getCoreStatus() {
     return _powerCore.getStatus();
 }
-std::string Transformer::getStatus(RobotStatus& status){
-    return status.getStatus();
+std::string Transformer::getStatus(){
+    return _robotStatus.getStatus();
 }

@@ -3,13 +3,16 @@ Assignment 3
 */
 #include "Transformer.h"
 #include "PowerCore.h"
+#include "Status.h"
 //! Constructor and destructor
 Transformer::Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed,PowerCore coreStatus):
     _callSign(callSign), 
     _moveSpeed(moveSpeed), 
     _isGunEquiped(isGunEquiped), 
     _isTransformed(isTransformed), 
-    _powerCore(coreStatus){}
+    _powerCore(coreStatus), //! associativity;
+    _robotStatus("undefined"){}; //! composition
+
 Transformer::~Transformer(){};
 
 //! Methods
