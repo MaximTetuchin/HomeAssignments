@@ -39,7 +39,7 @@ class Transformer {
         int _moveSpeed;
         bool _isGunEquiped;
         bool _isTransformed;
-        RobotStatus _robotStatus; //! composition
         PowerCore _powerCore; //! associativity
+        RobotStatus _robotStatus; //! composition
 };
 #endif

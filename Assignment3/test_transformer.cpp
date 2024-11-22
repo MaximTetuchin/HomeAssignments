@@ -8,48 +8,43 @@ Assignment 3
 
 //! RobotStatus class test
 TEST(RobotStatusTest, ConstructorAndGetStatus) {
-    RobotStatus status("Operational");
-    EXPECT_EQ(status.getStatus(), "Operational");
+    PowerCore core(true);
+    Transformer transformer("Optimus", 100, true, false, core);
+    EXPECT_EQ(transformer.getStatus(), "undefined");
 }
-
 TEST(RobotStatusTest, SetGetStatus) {
-    RobotStatus status("Operational");
-    status.setStatus("Damaged");
-    EXPECT_EQ(status.getStatus(), "Damaged");
+    PowerCore core(true);
+    Transformer transformer("Optimus", 100, true, false, core);
+    transformer.setStatus("Damaged");
+    EXPECT_EQ(transformer.getStatus(), "Damaged");
 }
-
 //! Transformer class test
 TEST(TransformerTest, ConstructorAndGetCallSign) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     EXPECT_EQ(transformer.getCallSign(), "Optimus");
 }
 
 TEST(TransformerTest, ConstructorAndGetMoveSpeed) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     EXPECT_EQ(transformer.getMoveSpeed(), 100);
 }
 
 TEST(TransformerTest, ConstructorAndGetIsGunEquiped) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     EXPECT_TRUE(transformer.getIsGunEquiped());
 }
 
 TEST(TransformerTest, ConstructorAndGetIsTransformed) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     EXPECT_FALSE(transformer.getIsTransformed());
 }
 
 TEST(TransformerTest, ConstructorAndGetCoreStatus) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     EXPECT_TRUE(transformer.getCoreStatus());
 }
@@ -57,7 +52,6 @@ TEST(TransformerTest, ConstructorAndGetCoreStatus) {
 //! Setters test
 TEST(TransformerTest, SetGetCallSign) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     transformer.setCallSign("Megatron");
     EXPECT_EQ(transformer.getCallSign(), "Megatron");
@@ -65,7 +59,6 @@ TEST(TransformerTest, SetGetCallSign) {
 
 TEST(TransformerTest, SetGetMoveSpeed) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     transformer.setMoveSpeed(150);
     EXPECT_EQ(transformer.getMoveSpeed(), 150);
@@ -73,7 +66,6 @@ TEST(TransformerTest, SetGetMoveSpeed) {
 
 TEST(TransformerTest, SetGetIsGunEquiped) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     transformer.setIsGunEquiped(false);
     EXPECT_FALSE(transformer.getIsGunEquiped());
@@ -81,23 +73,14 @@ TEST(TransformerTest, SetGetIsGunEquiped) {
 
 TEST(TransformerTest, SetGetIsTransformed) {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     transformer.setIsTransformed(true);
     EXPECT_TRUE(transformer.getIsTransformed());
 }
 
-TEST(TransformerTest, GetStatus) {
-    PowerCore core(true);
-    RobotStatus status("Operational");
-    Transformer transformer("Optimus", 100, true, false, core);
-    EXPECT_EQ(transformer.getStatus(status), "Operational");
-}
-
-TEST(TransformerTest, changeStatusTest) {
+TEST(TransformerTest, ChangeStatusTest) {
     PowerCore core(false);
     core.changeStatus();
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     EXPECT_TRUE(transformer.getCoreStatus());
 }

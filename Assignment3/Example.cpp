@@ -9,4 +9,5 @@ int main(){
     Autobot1.setStatus("Legend");
     std::string b = Autobot1.getStatus();
     std::cout<<b<<"\n";
+    std::cout<<"My code is finally working!!!\n";
 }
