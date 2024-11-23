@@ -1,3 +1,6 @@
+/* Maxim Tetuchin tetuhin@inbox.ru | st128993@student.spbu.ru
+Assignment 5
+*/
 #include "Transformer.h"
 #include "Soldiers.h"
 #include "Scouts.h"

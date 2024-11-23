@@ -5,7 +5,7 @@
 st128993@student.spbu.ru | tetuhin@inbox.ru
 ## Description
 Home assigment 5.\
-Tests all written classes.
+Wrote vitrual methods and tests for them.
 ## Build
 make
 ## Run
