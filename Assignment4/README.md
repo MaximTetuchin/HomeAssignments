@@ -7,9 +7,10 @@ st128993@student.spbu.ru | tetuhin@inbox.ru
 Home assigment 4.\
 Tests all written classes.
 ## Build
-make\
-test
+make example // This command builds MyDebugFile.cpp
+make test // This command builds all written tests
 ## Run
-./testCheck
+./example // to run "debug" code.
+./testCheck // to run tests.
 ## Clear
 make clean
