@@ -71,7 +71,7 @@ TEST(SoldiersConstructorTests, ConstructorWithPartialParameters_NoFirepower)
     EXPECT_FALSE(soldier.getIsTransformed());
     EXPECT_TRUE(soldier.getCoreStatus());
     EXPECT_EQ(soldier.getArmorLevel(), 50);
-    EXPECT_EQ(soldier.getFirepower(), 0);  // Firepower should default to 0
+    EXPECT_EQ(soldier.getFirepower(), 0); 
 }
 
 TEST(SoldiersConstructorTests, ConstructorWithMinimumParameters)
@@ -82,7 +82,7 @@ TEST(SoldiersConstructorTests, ConstructorWithMinimumParameters)
     EXPECT_EQ(soldier.getMoveSpeed(), 30);
     EXPECT_FALSE(soldier.getIsGunEquiped());
     EXPECT_FALSE(soldier.getIsTransformed());
-    EXPECT_FALSE(soldier.getCoreStatus());  // Assuming default PowerCore status is false
-    EXPECT_EQ(soldier.getArmorLevel(), 0);  // Armor level should default to 0
-    EXPECT_EQ(soldier.getFirepower(), 0);   // Firepower should default to 0
+    EXPECT_FALSE(soldier.getCoreStatus());
+    EXPECT_EQ(soldier.getArmorLevel(), 0);  
+    EXPECT_EQ(soldier.getFirepower(), 0);   
 }

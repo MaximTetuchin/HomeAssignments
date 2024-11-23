@@ -36,10 +36,10 @@ void Soldiers::engageCombat()
 
 std::string Soldiers::info()
 {
-    return "Callsign: " + _callSign + ",moveSpeed: " + std::to_string(_moveSpeed) + ",isGunEquiped: "
-           + std::to_string(_isGunEquiped) +",isTransformed: " + std::to_string(_isTransformed) + "\n"
-           + "PowerCore status: "+std::to_string(_powerCore.getStatus()) + ",armorLevel: "
-           + std::to_string(_armorLevel) + ",firepower: " + std::to_string(_firepower)+"\n";
+    return "Callsign: " + _callSign + ", moveSpeed: " + std::to_string(_moveSpeed) + ", isGunEquiped: "
+           + std::to_string(_isGunEquiped) +", isTransformed: " + std::to_string(_isTransformed) + "\n"
+           + "PowerCore status: "+std::to_string(_powerCore.getStatus()) + ", Robot Status: " + _robotStatus.getStatus()
+           + ", armorLevel: " + std::to_string(_armorLevel) + ", firepower: " + std::to_string(_firepower)+"\n";
 }
 
 std::ostream& operator<<(std::ostream& os,Soldiers& soldier)

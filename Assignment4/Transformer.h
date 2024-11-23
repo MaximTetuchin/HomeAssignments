@@ -8,49 +8,53 @@ Assignment 4
 #include <string>
 #include <iostream>
 
-class Transformer {
-        friend class Soldiers;
-        friend class Scouts;
-        friend class Artillery;
-    public:
-        //! Constructor and destructor
-        Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore core);
-        Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed);
-        Transformer(std::string callSign, int moveSpeed, bool isGunEquiped);
-        Transformer(std::string callSign, int moveSpeed);
-        ~Transformer();
+class Transformer
+{
+    friend class Soldiers;
+    friend class Scouts;
+    friend class Artillery;
+public:
+    //! Constructor and destructor
+    Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore core);
+    Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed);
+    Transformer(std::string callSign, int moveSpeed, bool isGunEquiped);
+    Transformer(std::string callSign, int moveSpeed);
+    ~Transformer();
 
 
-        friend std::ostream& operator<<(std::ostream& os, Transformer& transformer);
+    friend std::ostream& operator<<(std::ostream& os, Transformer& transformer);
 
-        //! Class methods
-        void pullOutTheGun();
-        void Transform();
-        std::string info();
+    //! Class methods
+    void pullOutTheGun();
+    void Transform();
+    std::string info();
 
-        //! Setters
-        void setCallSign(const std::string& callSign);
-        void setMoveSpeed(int moveSpeed);
-        void setIsGunEquiped(bool isGunEquiped);
-        void setIsTransformed(bool isTransformed);
-        void setCoreStatus(bool isCoreActive);
-        void setStatus(std::string Status,RobotStatus& status);
+    //! Setters
+    void setCallSign(const std::string& callSign);
+    void setMoveSpeed(int moveSpeed);
+    void setIsGunEquiped(bool isGunEquiped);
+    void setIsTransformed(bool isTransformed);
+    void setCoreStatus(bool isCoreActive);
+    void setStatus(std::string Status);
 
-        //! Getters
-        std::string getCallSign();
-        int getMoveSpeed();
-        bool getIsGunEquiped();
-        bool getIsTransformed();
-        bool getCoreStatus();
-        std::string getStatus(RobotStatus& status);
+    //! Getters
+    std::string getCallSign();
+    int getMoveSpeed();
+    bool getIsGunEquiped();
+    bool getIsTransformed();
+    bool getCoreStatus();
+    std::string getStatus();
 
-        //! Stronger?
-        bool operator<(Transformer& other);
-    private:
-        std::string _callSign;
-        int _moveSpeed;
-        bool _isGunEquiped;
-        bool _isTransformed;
-        PowerCore _powerCore;
+    //! Stronger?
+    bool operator<(Transformer& other);
+    bool operator==(Transformer& other);
+    bool operator>(Transformer& other);
+private:
+    std::string _callSign;
+    int _moveSpeed;
+    bool _isGunEquiped;
+    bool _isTransformed;
+    PowerCore _powerCore;
+    RobotStatus _robotStatus;
 };
 #endif

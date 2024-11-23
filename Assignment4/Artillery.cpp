@@ -41,10 +41,10 @@ void Artillery::fire()
 
 std::string Artillery::info()
 {
-    return "Callsign: " + _callSign + ",moveSpeed: " + std::to_string(_moveSpeed) + ",isGunEquiped: "
-           + std::to_string(_isGunEquiped) +",isTransformed: " + std::to_string(_isTransformed) + "\n"
-           + "PowerCore status: "+std::to_string(_powerCore.getStatus()) + ",range: "
-           + std::to_string(_range) + ",ammoCapacity: " + std::to_string(_ammoCapacity)+"\n";
+    return "Callsign: " + _callSign + ", moveSpeed: " + std::to_string(_moveSpeed) + ", isGunEquiped: "
+           + std::to_string(_isGunEquiped) +", isTransformed: " + std::to_string(_isTransformed) + "\n"
+           + "PowerCore status: "+std::to_string(_powerCore.getStatus()) + ", Robot Status: " + _robotStatus.getStatus()
+           + ", range: " + std::to_string(_range) + ",ammoCapacity: " + std::to_string(_ammoCapacity)+"\n";
 }
 
 std::ostream& operator<<(std::ostream& os,Artillery& artillery)

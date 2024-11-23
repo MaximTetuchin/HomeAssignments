@@ -6,7 +6,8 @@ Assignment 4
 #include "Transformer.h"
 #include <string>
 
-class Scouts : public Transformer {
+class Scouts : public Transformer
+{
 public:
     Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int _stealthLevel, int _sensorRange);
     Scouts(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int _stealthLevel);
@@ -29,6 +30,6 @@ public:
 
 private:
     int _stealthLevel;
-    int _sensorRange; 
+    int _sensorRange;
 };
 #endif

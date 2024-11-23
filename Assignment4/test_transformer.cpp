@@ -101,23 +101,17 @@ TEST(TransformerTest, SetGetIsTransformed)
 TEST(TransformerTest, GetStatus)
 {
     PowerCore core(true);
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
-    EXPECT_EQ(transformer.getStatus(status), "Operational");
+    EXPECT_EQ(transformer.getStatus(), "undefined");
 }
 
 TEST(TransformerTest, changeStatusTest)
 {
     PowerCore core(false);
     core.changeStatus();
-    RobotStatus status("Operational");
     Transformer transformer("Optimus", 100, true, false, core);
     EXPECT_TRUE(transformer.getCoreStatus());
 }
-
-#include <gtest/gtest.h>
-#include "Transformer.h"
-#include "PowerCore.h"
 
 TEST(TransformerConstructorTests, ConstructorWithFullParameters)
 {
@@ -150,7 +144,7 @@ TEST(TransformerConstructorTests, ConstructorWithMinimumParameters)
     EXPECT_EQ(transformer.getMoveSpeed(), 30);
     EXPECT_FALSE(transformer.getIsGunEquiped());
     EXPECT_FALSE(transformer.getIsTransformed());
-    EXPECT_FALSE(transformer.getCoreStatus());  // Assuming default PowerCore status is false
+    EXPECT_FALSE(transformer.getCoreStatus());
 }
 
 TEST(TransformerComparisonTests, CompareTransformers_SpeedComparison)
@@ -165,12 +159,18 @@ TEST(TransformerComparisonTests, CompareTransformers_SpeedComparison)
 TEST(TransformerComparisonTests, CompareTransformers_SameSpeed)
 {
     Transformer transformer1("HotRod", 50);
-    Transformer transformer2("Wheeljack", 45);
+    Transformer transformer2("Wheeljack", 50);
 
-    EXPECT_FALSE(transformer1 < transformer2);
-    EXPECT_TRUE(transformer2 < transformer1);
+    EXPECT_TRUE(transformer2 == transformer1);
 }
 
+TEST(TransformerComparisonTests, CompareTransformers_moreSpeed)
+{
+    Transformer transformer1("HotRod", 60);
+    Transformer transformer2("Wheeljack", 50);
+
+    EXPECT_TRUE(transformer1 > transformer2);
+}
 
 int main(int argc, char **argv)
 {

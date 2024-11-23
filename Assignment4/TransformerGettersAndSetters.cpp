@@ -24,9 +24,9 @@ void Transformer::setCoreStatus(bool isCoreActive)
 {
     _powerCore.changeStatus();
 }
-void Transformer::setStatus(std::string newStatus,RobotStatus& status)
+void Transformer::setStatus(std::string newStatus)
 {
-    status.setStatus(newStatus);
+    _robotStatus.setStatus(newStatus);
 }
 
 //! Getters
@@ -50,7 +50,7 @@ bool Transformer::getCoreStatus()
 {
     return _powerCore.getStatus();
 }
-std::string Transformer::getStatus(RobotStatus& status)
+std::string Transformer::getStatus()
 {
-    return status.getStatus();
+    return _robotStatus.getStatus();
 }

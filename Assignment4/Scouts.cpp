@@ -42,10 +42,10 @@ void Scouts::performRecon()
 
 std::string Scouts::info()
 {
-    return "Callsign: " + _callSign + ",moveSpeed: " + std::to_string(_moveSpeed) + ",isGunEquiped: "
-           + std::to_string(_isGunEquiped) +",isTransformed: " + std::to_string(_isTransformed) + "\n"
-           + "PowerCore status: "+std::to_string(_powerCore.getStatus()) + ",stealthLevel: "
-           + std::to_string(_stealthLevel) + ",sensorRange: " + std::to_string(_sensorRange)+"\n";
+    return "Callsign: " + _callSign + ", moveSpeed: " + std::to_string(_moveSpeed) + ", isGunEquiped: "
+           + std::to_string(_isGunEquiped) +", isTransformed: " + std::to_string(_isTransformed) + "\n"
+           + "PowerCore status: "+std::to_string(_powerCore.getStatus()) + ", Robot Status: " + _robotStatus.getStatus()
+           + ", stealthLevel: " + std::to_string(_stealthLevel) + ", sensorRange: " + std::to_string(_sensorRange)+"\n";
 }
 
 std::ostream& operator<<(std::ostream& os,Scouts& scout)

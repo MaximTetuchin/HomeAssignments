@@ -9,16 +9,17 @@ Transformer::Transformer(std::string callSign, int moveSpeed, bool isGunEquiped,
     _moveSpeed(moveSpeed),
     _isGunEquiped(isGunEquiped),
     _isTransformed(isTransformed),
-    _powerCore(coreStatus) {}
+    _powerCore(coreStatus),
+    _robotStatus("undefined") {}
 
 Transformer::Transformer(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed):
-    _callSign(callSign),_moveSpeed(moveSpeed),_isGunEquiped(isGunEquiped),_isTransformed(isTransformed),_powerCore() {}
+    _callSign(callSign),_moveSpeed(moveSpeed),_isGunEquiped(isGunEquiped),_isTransformed(isTransformed),_powerCore(),_robotStatus("undefined") {}
 
 Transformer::Transformer(std::string callSign, int moveSpeed, bool isGunEquiped):
-    _callSign(callSign),_moveSpeed(moveSpeed),_isGunEquiped(isGunEquiped),_isTransformed(0),_powerCore() {}
+    _callSign(callSign),_moveSpeed(moveSpeed),_isGunEquiped(isGunEquiped),_isTransformed(0),_powerCore(),_robotStatus("undefined") {}
 
 Transformer::Transformer(std::string callSign, int moveSpeed):
-    _callSign(callSign),_moveSpeed(moveSpeed),_isGunEquiped(0),_isTransformed(0),_powerCore() {}
+    _callSign(callSign),_moveSpeed(moveSpeed),_isGunEquiped(0),_isTransformed(0),_powerCore(),_robotStatus("undefined") {}
 
 Transformer::~Transformer() {};
 
@@ -45,9 +46,10 @@ void Transformer::Transform()
 
 std::string Transformer::info()
 {
-    return "Callsign: " + _callSign + ",moveSpeed: " + std::to_string(_moveSpeed) + ",isGunEquiped: "
-           + std::to_string(_isGunEquiped) +",isTransformed: " + std::to_string(_isTransformed)
-           + ",PowerCore status: "+std::to_string(_powerCore.getStatus())+"\n";
+    return "Callsign: " + _callSign + ", moveSpeed: " + std::to_string(_moveSpeed) + ", isGunEquiped: "
+           + std::to_string(_isGunEquiped) +", isTransformed: " + std::to_string(_isTransformed)
+           + ", PowerCore status: "+std::to_string(_powerCore.getStatus())
+           + ", Robot Status: " + _robotStatus.getStatus() + "\n";
 }
 
 std::ostream& operator<<(std::ostream& os, Transformer& transformer)
@@ -59,6 +61,30 @@ std::ostream& operator<<(std::ostream& os, Transformer& transformer)
 bool Transformer::operator<(Transformer& other)
 {
     if (this->_moveSpeed<other._moveSpeed)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool Transformer::operator==(Transformer& other)
+{
+    if (this->_moveSpeed==other._moveSpeed)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool Transformer::operator>(Transformer& other)
+{
+    if (this->_moveSpeed>other._moveSpeed)
     {
         return true;
     }

@@ -5,13 +5,14 @@ Assignment 4
 #define POWERCORE
 #include <iostream>
 
-class PowerCore{
-    public:
-        PowerCore(bool CoreStatus);
-        PowerCore();
-        void changeStatus();
-        bool getStatus();
-    private:
-        bool _CoreStatus;   
+class PowerCore
+{
+public:
+    PowerCore(bool CoreStatus);
+    PowerCore();
+    void changeStatus();
+    bool getStatus();
+private:
+    bool _CoreStatus;
 };
 #endif

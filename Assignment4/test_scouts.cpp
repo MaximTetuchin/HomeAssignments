@@ -86,7 +86,7 @@ TEST(ScoutsConstructorTests, ConstructorWithPartialParameters_NoSensorRange)
     EXPECT_TRUE(scout.getIsTransformed());
     EXPECT_TRUE(scout.getCoreStatus());
     EXPECT_EQ(scout.getStealthLevel(), 70);
-    EXPECT_EQ(scout.getSensorRange(), 0);  // Sensor range should default to 0
+    EXPECT_EQ(scout.getSensorRange(), 0);
 }
 
 TEST(ScoutsConstructorTests, ConstructorWithMinimumParameters)

@@ -6,7 +6,8 @@ Assignment 4
 #include "Transformer.h"
 #include <string>
 
-class Soldiers : public Transformer {
+class Soldiers : public Transformer
+{
 public:
     Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int armorLevel, int firepower);
     Soldiers(std::string callSign, int moveSpeed, bool isGunEquiped, bool isTransformed, PowerCore coreStatus, int armorLevel);
