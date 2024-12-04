@@ -88,7 +88,7 @@ bool Transformer::operator==(Transformer& other)
 {
     if (this->_moveSpeed==other._moveSpeed)
     {
-        return true;
+        return true; 
     }
     else
     {
