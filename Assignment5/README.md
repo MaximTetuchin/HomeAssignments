@@ -7,8 +7,10 @@ st128993@student.spbu.ru | tetuhin@inbox.ru
 Home assigment 5.\
 Wrote vitrual methods and tests for them.
 ## Build
-make
+make // to build code \
+make test // to build tests
 ## Run
-./example // to run code.
+./example // to run code. \
+./runTests // to run tests
 ## Clear
 make clean
