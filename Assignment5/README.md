@@ -9,6 +9,6 @@ Wrote vitrual methods and tests for them.
 ## Build
 make
 ## Run
-./example // to run code.\
+./example // to run code.
 ## Clear
 make clean
