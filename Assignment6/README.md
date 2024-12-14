@@ -6,6 +6,7 @@ st128993@student.spbu.ru | tetuhin@inbox.ru
 ## Description
 Home assigment 6.\
 templates were written and tested. 
+
 ## Build
 make
 ## Clear
